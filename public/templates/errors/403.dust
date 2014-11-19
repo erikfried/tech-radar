@@ -1,0 +1,6 @@
+{>"layouts/master" /}
+
+{<body}
+    <h1>NOT ALLOWED IN</h1>
+    <a href="/auth">Log in with another Google Account</a>
+{/body}
