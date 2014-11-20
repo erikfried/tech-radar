@@ -1,4 +1,6 @@
 {
+    "DATABASE_URL":
+        "postgres://tech_radar:password@localhost:15432/tech_radar",
     "authConfig": {
         "admins": ["erik.fried@schibsted.se"],
         "origin": "http://localhost:8000"
@@ -37,7 +39,7 @@
                 "arguments": [
                     "path:./public",
                     "path:./.build",
-                    {   
+                    {
                         "template": {
                             "module": "kraken-devtools/plugins/dustjs",
                             "files": "/templates/**/*.js",
