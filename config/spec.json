@@ -1,0 +1,51 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.0",
+        "title": "<enter your title>"
+    },
+    "paths": {
+        "/radar/{id}": {
+            "get": {
+                "description": "Get the radar with given id\n",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Size of array",
+                        "required": true,
+                        "type": "number",
+                        "format": "double"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "ArrayOfBlips",
+                            "type": "array",
+                            "items": {
+                                "title": "Blip",
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "coords": {
+                                        "type": "object"
+                                    },
+                                    "latest": {
+                                        "type": "object"
+                                    },
+                                    "target": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
