@@ -7,11 +7,23 @@ module.exports = function browserify(grunt) {
 
 	// Options
 	return {
-		build: {
+		admin: {
 			files: {
-				'.build/js/app.js': ['public/js/app.js'],
+                '.build/js/admin.js': ['public/js/admin.js']
 			},
-			options: {}
+            options:      {
+//                transform:  [ require('grunt-react').browserify ]
+
+            }
+		},
+        main: {
+			files: {
+                '.build/js/app.js': ['public/js/app.js']
+			},
+            options:      {
+//                transform:  [ require('grunt-react').browserify ]
+
+            }
 		}
 	};
 };
