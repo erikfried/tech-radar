@@ -1,0 +1,36 @@
+@import (less) "../components/bootstrap-material-design/dist/css/material.css";
+.hidden {
+    display: none;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+//    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.svg-content {
+    display: inline-block;
+//    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.target-name {
+    font-weight: bold;
+}
+.description {
+    font-style: italic;
+}
+.comment {
+    display: none;
+}
+.list-group-item:hover {
+    background: #eaeaea;
+    .comment {
+        display: block;
+    }
+}
