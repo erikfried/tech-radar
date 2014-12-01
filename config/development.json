@@ -1,5 +1,5 @@
 {
-    "DATABASE_URL":
+    "databaseUrl":
         "postgres://tech_radar:password@localhost:15432/tech_radar",
     "authConfig": {
         "admins": ["erik.fried@schibsted.se"],
