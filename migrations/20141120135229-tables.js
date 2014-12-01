@@ -14,11 +14,13 @@ exports.up = function (db, callback) {
             id: { type: 'int', primaryKey: true, autoIncrement: true },
             name: { type: 'string', length: 255, notNull: true },
             category: { type: 'string', length: 255, notNull: true },
+            angle: {type: 'decimal', notNull: true},
             description: { type: 'text'},
             created: { type: 'timestamp', notNull: true },
             updated: { type: 'timestamp', notNull: true }
         }),
         db.createTable.bind(db, 'blip', {
+            id: { type: 'int', primaryKey: true, autoIncrement: true },
             target_id: { type: 'int', notNull: true},
             radar_id: { type: 'int', notNull: true},
             distance: { type: 'int', notNull: true},

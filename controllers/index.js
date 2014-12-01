@@ -10,4 +10,12 @@ module.exports = function (router) {
     router.get('/', function (req, res) {
         res.render('index', model);
     });
+
+    router.get('/admin', function (req, res) {
+       require('../lib/db')
+           .findRadars()
+           .then(function (radars){
+                res.render('edit', {radars: radars});
+           });
+    });
 };

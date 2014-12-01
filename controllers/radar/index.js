@@ -1,8 +1,30 @@
 'use strict';
 var db = require('../../lib/db');
+var _ = require('lodash');
 
 function renderLatest(req, res) {
     return db.findLatest()
+        .then(render(req, res));
+}
+function renderData(req, res) {
+    var radarId = req.param('id');
+    return db.radar.getData(radarId)
+        .then(function (itemsList) {
+            var grouped = _.groupBy(itemsList, function (item) {
+              return item.category;
+            });
+            console.log('Grouped', grouped);
+            Object.keys(grouped).forEach(function (key) {
+                grouped[key] = _.groupBy(grouped[key], function (item) {
+                    if (item.distance < 25) {return 'Adopt';}
+                    if (item.distance < 50) {return 'Trial';}
+                    if (item.distance < 75) {return 'Asses';}
+                    return 'Hold';
+                });
+            });
+            console.log('Grouped and sorted', grouped);
+            return grouped;
+        })
         .then(render(req, res));
 }
 
@@ -15,4 +37,5 @@ function render(req, res) {
 module.exports = function (router) {
     router.get('/', renderLatest);
     router.get('/latest', renderLatest);
+    router.get('/:id', renderData);
 };

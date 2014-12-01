@@ -22,7 +22,7 @@ function create (req, res) {
     return db.target.create(obj)
         .then(function (target) {
             res.status(201);
-            res.json({uri: req.baseUrl +'/' + target});
+            res.json({uri: req.baseUrl +'/' + target, id: target});
         });
 }
 

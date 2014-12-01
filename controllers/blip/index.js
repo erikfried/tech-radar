@@ -12,12 +12,15 @@ function create(req, res) {
     return db.blip.create(obj)
         .then(function (blip) {
             res.status(201);
-            res.json({uri: req.baseUrl +'/' + blip})
+            res.json({uri: req.baseUrl +'/' + blip, id: blip});
+        })
+        .catch(function (e) {
+            console.log('Failed inserting blip', e);
+            res.status(e.status || 500);
+            res.json({error: e.message || 'Sorry, technical error'});
         });
 }
 
 module.exports = function (router) {
     router.post('/', create);
 };
-
-
