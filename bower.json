@@ -1,0 +1,21 @@
+{
+  "name": "ab-tech-radar",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Erik Fried <erik.fried@aftonbladet.se>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~0.1.6",
+  }
+}
