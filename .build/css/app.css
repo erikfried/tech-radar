@@ -5986,9 +5986,21 @@ icon-material-lightgrey {
 .comment {
   display: none;
 }
-.list-group-item:hover {
-  background: #eaeaea;
+.list-group-item-heading {
+  border-bottom: 1px solid #fafafa;
 }
-.list-group-item:hover .comment {
+.list-group-item.blip-is-active {
+  background: #eaeaea;
+  transition: .3s;
+}
+.list-group-item.blip-is-active .comment {
   display: block;
+}
+.blip {
+  fill: #efefef;
+  stroke: #121212;
+}
+.blip.blip-is-active {
+  fill: #ca11aa;
+  stroke: #ccaa11;
 }

@@ -3,11 +3,15 @@ var foo = require('./foo')();
 var React = require('react');
 var Radar = require('./radar');
 
-React.render(<Radar url='http://localhost:8000/radar/1'/>,
+React.render(<Radar/>,
     document.getElementById('radar'));
 
 (function init() {
     $(document).ready(function () {
+
+        $('#radar-select').on('change', function (value) {
+            $('#blip-radar').val(value);
+        });
 
         $('.new-target-js').hide();
         $('#blip-form').hide();
@@ -35,9 +39,7 @@ React.render(<Radar url='http://localhost:8000/radar/1'/>,
                 }
             });
             targets.initialize();
-
             var typeahead = $('#targets').typeahead(null, {
-                //            name: 'targets',
                 displayKey: 'name',
                 source: targets.ttAdapter(),
                 highlight: true,

@@ -15,7 +15,7 @@ module.exports = function (router) {
        require('../lib/db')
            .findRadars()
            .then(function (radars){
-                res.render('edit', {radars: radars});
+                res.render('edit', {latest: radars[0].id, radars: radars});
            });
     });
 };

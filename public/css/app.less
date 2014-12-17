@@ -28,9 +28,26 @@
 .comment {
     display: none;
 }
-.list-group-item:hover {
-    background: #eaeaea;
-    .comment {
-        display: block;
+
+.list-group-item-heading {
+    border-bottom: 1px solid #fafafa;
+}
+
+.list-group-item {
+    &.blip-is-active {
+        background: #eaeaea;
+        transition: .3s;
+        .comment {
+            display: block;
+        }
     }
+}
+
+.blip {
+    &.blip-is-active {
+        fill: #ca11aa;
+        stroke: #ca1
+    }
+    fill: #efefef;
+    stroke: #121212
 }

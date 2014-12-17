@@ -21,10 +21,8 @@
                 </div>
             </div>
         </form>
-        <!--<div class="form-group">-->
+
         <form id="target-form" role="form" class="form-horizontal" role="form" method="post" action="/target" target="/target">
-            <!--<fieldset class="">-->
-            <!--<legend>Target</legend>-->
             <div class="form-group">
                 <label for="targets" class="col-lg-2 control-label">Target name</label>
                 <div class="col-lg-10">
@@ -36,10 +34,8 @@
             </div>
             <div class="new-target-js">
                 <div class="alert alert-dismissable alert-info">
-                    <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
                     <strong>New target!</strong> This target does not exist. You will have to provide some info and
-                    create
-                    it.
+                    create it.
                 </div>
                 <div class="form-group">
                     <label for="target-category" class="col-lg-2 control-label">Pick a category</label>
@@ -81,11 +77,9 @@
                 </div>
             </div>
         </form>
+
+        <!-- Form for creating blip -->
         <form role="form" id="blip-form" class="form-horizontal" method="post" action="/blip">
-            <!--<fieldset>-->
-            <!--<legend>Blip</legend>-->
-
-
             <div class="form-group">
                 <label class="col-lg-2 control-label" for="blip-distance">Target</label>
                 <div class="col-lg-10">

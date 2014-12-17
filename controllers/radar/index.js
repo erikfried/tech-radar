@@ -2,16 +2,23 @@
 var db = require('../../lib/db');
 var _ = require('lodash');
 
-function renderLatest(req, res) {
+
+var renderLatest = function fetchAndRenderLatest(req, res) {
     return db.findLatest()
-        .then(render(req, res));
-}
+        .then(function (latest) {
+            return renderRadar(req, res, latest);
+        });
+};
 function renderData(req, res) {
     var radarId = req.param('id');
+    return renderRadar(req, res, radarId);
+
+}
+function renderRadar(req, res, radarId) {
     return db.radar.getData(radarId)
         .then(function (itemsList) {
             var grouped = _.groupBy(itemsList, function (item) {
-              return item.category;
+                return item.category;
             });
             console.log('Grouped', grouped);
             Object.keys(grouped).forEach(function (key) {

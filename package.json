@@ -49,5 +49,8 @@
     "css": "less",
     "js": "browserify",
     "task": "grunt"
+  },
+  "scripts": {
+      "postinstall": "bower install"
   }
 }
